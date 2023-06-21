@@ -13,7 +13,7 @@ class PlotCorner:
         self.medians = []
 
         for parameter in self.parameters:
-            if len(set(data.posteriors_dict[parameter])) == 1:
+            if len(set(data.posteriors_dict[parameter])) < 10:
                 print('Ignoring fixed parameter ' + parameter + '.')
             else:
                 self.valid_parameters.append(parameter)
@@ -44,6 +44,6 @@ class PlotCorner:
         fig.suptitle(title, fontsize=20, x=0.98, y=0.98, horizontalalignment='right')
 
         if save:
-            plt.savefig(title + '_plot.png')
+            plt.savefig('plots/' + title + '_plot.png')
         if show:
             plt.show()
