@@ -41,7 +41,7 @@ class PlotCorner:
         corner.overplot_lines(fig=fig, xs=self.lower_quantiles, color='red')
         corner.overplot_lines(fig=fig, xs=self.upper_quantiles, color='red')
 
-        fig.suptitle(title, fontsize=20, x=0.98, y=0.98, horizontalalignment='right')
+        fig.suptitle(title, x=0.98, y=0.98, horizontalalignment='right')
 
         if save:
             plt.savefig('plots/' + title + '_plot.png')
